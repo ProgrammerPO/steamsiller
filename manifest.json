@@ -1,0 +1,28 @@
+{
+  "name": "BetBooster Extension",
+  "description": "1xStavka, 1xBet ускоритель",
+  "version": "1.0",
+  "author": "BetBooster",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://*/*"],
+      "js": ["autoloader.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [{
+    "resources": ["content.js"],
+    "matches": ["https://*/*"],
+    "extension_ids": []
+  }]
+}
